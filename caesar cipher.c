@@ -51,8 +51,7 @@ void caesar(char s[], int key, char mode)
 	}
 	s[i] = '\0'; break;
 			
-	case 'D': case 'd':
-			
+	case 'D': case 'd':		
         for (i = 0; s[i] != '\0'; i++)
 	{
 		c = s[i];
