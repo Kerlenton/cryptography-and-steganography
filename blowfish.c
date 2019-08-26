@@ -214,7 +214,8 @@ static uint32_t __Keys32b[18] = {
 	0xc0ac29b7, 0xc97c50dd, 0x3f84d5b5, 0xb5470917, 0x9216d5d9, 0x8979fb1b,
 };
 
-int main(void) {
+main()
+{
 	uint8_t encrypted[BUFF_SIZE], decrypted[BUFF_SIZE];
 	uint8_t buffer[BUFF_SIZE];
 	uint8_t key64b[56] = "This is a crypto blowfish 448 bits key and 64 bits text!";
