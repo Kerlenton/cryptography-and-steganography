@@ -1,9 +1,18 @@
 #include <stdint.h>
-#include <string.h>
 #define BUFF_SIZE 1024
 
-uint8_t buffer[BUFF_SIZE];
-uint8_t buffer2[BUFF_SIZE];
+size_t strlen(char* s)
+{
+	size_t length = 0;
+
+	while (*s != '\0')
+	{
+		s++;
+		length++;
+	}
+
+	return length;
+}
 
 uint8_t power(uint8_t x, uint8_t y)
 {
