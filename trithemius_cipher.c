@@ -1,4 +1,5 @@
 #include <stdint.h>
+#include <string.h>
 #define BUFF_SIZE 1024
 
 uint8_t buffer[BUFF_SIZE];
