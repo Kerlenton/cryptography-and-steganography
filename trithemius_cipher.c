@@ -26,7 +26,7 @@ int functionS(uint8_t c)
 	return S;
 }
 
-void functionC(uint8_t* c, uint8_t mode, uint8_t* buffer)
+void trith(uint8_t* c, uint8_t mode, uint8_t* buffer)
 {
 	uint8_t* C;
 	uint8_t i;
