@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "caesar.h"
 
 static char _alpha_caesar[MAX_LENGTH] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
