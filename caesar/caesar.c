@@ -1,5 +1,5 @@
+#include <stdio.h>
 #include "caesar.h"
-
 
 static char _alpha_caesar[MAX_LENGTH] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 static unsigned char _length_caesar = LEN_ALPHA;
@@ -18,7 +18,7 @@ static void strcpy(char *s, char *t)
 		;
 }
 
-size_t strlen(const char *str)
+static size_t strlen(const char *str)
 {
 	size_t len = 0;
 	while (*str++)
@@ -30,12 +30,13 @@ size_t strlen(const char *str)
 extern int set_alpha_caesar(const char *alpha)
 {
 	const size_t length = strlen(alpha);
+
 	if (length >= MAX_LENGTH)
 		return 1;
 
 	_length_caesar = length;
-
 	strcpy(_alpha_caesar, alpha);
+
 	return 0;
 }
 
@@ -52,4 +53,14 @@ extern int caesar(char *to, char *from, int key, const int mode)
 	*to = END_OF_STRING;
 
 	return 0;
+}
+
+extern void print_array(char *arr, size_t length)
+{
+	printf("[ ");
+
+	for (size_t i = 0; i < length; i++)
+		printf("%c", arr[i]);
+
+	printf(" ]\n");
 }
