@@ -3,6 +3,56 @@
 static char _alpha_bacon[MAX_LENGTH] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 static char _default_char_bacon[2] = { 'A', 'B' };
 
+static char _index_char_bacon(const char ch)
+{
+	for (char *p = _alpha_bacon; *p != END_OF_STRING; p++)
+		if (*p == ch)
+			return p - _alpha_bacon;
+	return ch + END_OF_NUMBER;
+}
+
+static void _encrypt_bacon(char *to, const char *from)
+{
+	for (; *from != END_OF_STRING; from++)
+		*to++ = _index_char_bacon(*from);
+
+	*to = END_OF_NUMBER;
+}
+
+static void _decrypt_bacon(char *to, const char *from)
+{
+	for (; *from != END_OF_NUMBER; from++)
+	{
+		if (*from < 0)
+			*to++ = *from - END_OF_NUMBER;
+		else
+			*to++ = _alpha_bacon[*from];
+	}
+
+	*to = END_OF_STRING;
+}
+
+static void strcpy(char *s, char *t)
+{
+	while (*s++ = *t++)
+		;
+}
+
+static size_t strlen(const char *str)
+{
+	size_t len = 0;
+	while (*str++)
+		len++;
+
+	return len;
+}
+
+static int power(int x, int y)
+{
+	if (y <= 0) return 1;
+	return x * power(x, y - 1);
+}
+
 extern int bacon(char *to, char *from, const int mode)
 {
 	switch (mode)
@@ -93,54 +143,4 @@ extern void tr(char *to, char *from)
 		byte = 7;
 	}
 	*to = END_OF_NUMBER;
-}
-
-static void _encrypt_bacon(char *to, const char *from)
-{
-	for (; *from != END_OF_STRING; from++)
-		*to++ = _index_char_bacon(*from);
-
-	*to = END_OF_NUMBER;
-}
-
-static void _decrypt_bacon(char *to, const char *from)
-{
-	for (; *from != END_OF_NUMBER; from++)
-	{
-		if (*from < 0)
-			*to++ = *from - END_OF_NUMBER;
-		else
-			*to++ = _alpha_bacon[*from];
-	}
-
-	*to = END_OF_STRING;
-}
-
-static char _index_char_bacon(const char ch)
-{
-	for (char *p = _alpha_bacon; *p != END_OF_STRING; p++)
-		if (*p == ch)
-			return p - _alpha_bacon;
-	return ch + END_OF_NUMBER;
-}
-
-static void strcpy(char *s, char *t)
-{
-	while (*s++ = *t++)
-		;
-}
-
-static size_t strlen(const char *str)
-{
-	size_t len = 0;
-	while (*str++)
-		len++;
-
-	return len;
-}
-
-int power(int x, int y)
-{
-	if (y <= 0) return 1;
-	return x * power(x, y - 1);
 }
