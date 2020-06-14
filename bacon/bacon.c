@@ -1,29 +1,7 @@
 #include "bacon.h"
-#include <stdio.h>
 
 static char _alpha_bacon[MAX_LENGTH] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 static char _default_char_bacon[2] = { 'A', 'B' };
-
-main()
-{
-	char *s = "AAABC";
-	char r[50];
-
-	char c[] = "AAAAABBBAAAAABAAAAAABABBAAAABABBAAAABBBA";
-	char g[50];
-
-//	bacon(c, r, ENCRYPT_MODE);
-//	print_bacon(c);
-
-	tr(g, c);
-
-	bacon(r, g, DECRYPT_MODE);
-
-	print_bacon(g);
-
-	system("PAUSE");
-	return 0;
-}
 
 extern int bacon(char *to, char *from, const int mode)
 {
@@ -58,22 +36,22 @@ extern int set_alpha_bacon(const char *alpha)
 	return 0;
 }
 
-extern void print_bacon(const char * from) 
+extern void print_bacon(const char * from)
 {
 	for (; *from != END_OF_NUMBER; ++from)
-		if (*from >= 0) 
+		if (*from >= 0)
 		{
 			Byte x = { .byte = *from };
 			printf("%c%c%c%c%c%c%c%c",
 
-			x.bit._7 ? _default_char_bacon[1] : _default_char_bacon[0],
-			x.bit._6 ? _default_char_bacon[1] : _default_char_bacon[0],
-			x.bit._5 ? _default_char_bacon[1] : _default_char_bacon[0],
-			x.bit._4 ? _default_char_bacon[1] : _default_char_bacon[0],
-			x.bit._3 ? _default_char_bacon[1] : _default_char_bacon[0],
-			x.bit._2 ? _default_char_bacon[1] : _default_char_bacon[0],
-			x.bit._1 ? _default_char_bacon[1] : _default_char_bacon[0],
-			x.bit._0 ? _default_char_bacon[1] : _default_char_bacon[0]);
+				x.bit._7 ? _default_char_bacon[1] : _default_char_bacon[0],
+				x.bit._6 ? _default_char_bacon[1] : _default_char_bacon[0],
+				x.bit._5 ? _default_char_bacon[1] : _default_char_bacon[0],
+				x.bit._4 ? _default_char_bacon[1] : _default_char_bacon[0],
+				x.bit._3 ? _default_char_bacon[1] : _default_char_bacon[0],
+				x.bit._2 ? _default_char_bacon[1] : _default_char_bacon[0],
+				x.bit._1 ? _default_char_bacon[1] : _default_char_bacon[0],
+				x.bit._0 ? _default_char_bacon[1] : _default_char_bacon[0]);
 		}
 		else
 			putchar(*from - END_OF_NUMBER);
