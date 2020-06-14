@@ -1,22 +1,27 @@
 #include "trithemius.h"
-#include <stdio.h>
 
 static char _alpha_trithemius[MAX_LENGTH] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 static unsigned char _length_trithemius = LEN_ALPHA;
 
-main()
+static int gkey(int i)
 {
-	char s[] = "HELLO";
-	char t[20];
-	char r[20];
-	trithemius(t, s, ENCRYPT_MODE);
-	trithemius(r, t, DECRYPT_MODE);
-	printf("%s", r);
-
-	system("PAUSE");
-	return 0;
+	int key = 2 * i * i + 5 * i + 3;
 }
 
+static void strcpy(char *s, char *t)
+{
+	while (*s++ = *t++)
+		;
+}
+
+static size_t strlens(const char *str)
+{
+	size_t len = 0;
+	while (*str++)
+		len++;
+
+	return len;
+}
 
 static char _char_trithemius(char key, const char c, const char mode)
 {
@@ -31,7 +36,7 @@ static char _char_trithemius(char key, const char c, const char mode)
 
 extern int set_alpha_trithemius(const char *alpha)
 {
-	const size_t length = strlen(alpha);
+	const size_t length = strlens(alpha);
 
 	if (length >= MAX_LENGTH)
 		return 1;
@@ -56,24 +61,4 @@ extern int trithemius(char *to, char *from, const int mode)
 	*to = END_OF_STRING;
 
 	return 0;
-}
-
-static int gkey(int i)
-{
-	int key = 2 * i * i + 5 * i + 3;
-}
-
-static void strcpy(char *s, char *t)
-{
-	while (*s++ = *t++)
-		;
-}
-
-static size_t strlen(const char *str)
-{
-	size_t len = 0;
-	while (*str++)
-		len++;
-
-	return len;
 }
