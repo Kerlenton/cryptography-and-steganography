@@ -22,7 +22,7 @@ static size_t strlen(const char *str)
 	size_t len = 0;
 	while (*str++)
 		len++;
-	
+
 	return len;
 }
 
@@ -54,12 +54,12 @@ extern int caesar(char *to, char *from, int key, const int mode)
 	return 0;
 }
 
-extern void print_array(char *arr, size_t length)
+extern void print_array(char *arr)
 {
 	printf("[ ");
 
-	for (size_t i = 0; i < length; i++)
-		printf("%c", arr[i]);
+	for (char *i = arr; *i != '\0'; i++)
+		printf("%c", *i);
 
 	printf(" ]\n");
 }
