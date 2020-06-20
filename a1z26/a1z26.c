@@ -31,24 +31,3 @@ extern char a1z26(char *to, const char *from, const char mode)
 	*to = END(DECRYPT_MODE);
 	return 0;
 }
-
-main()
-{
-	char *h = "HELLO";
-	char s[50];
-	char q[50];
-
-	a1z26(s, h, ENCRYPT_MODE);
-
-	for (char *p = s; *p != END_OF_NUMBER; p++)
-	{
-		printf("%d\n", *p);
-	}
-
-	a1z26(q, s, DECRYPT_MODE);
-	printf("%s", q);
-	printf("%d", 'A');
-
-	system("PAUSE");
-	return 0;
-}
