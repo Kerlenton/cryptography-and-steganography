@@ -1,5 +1,4 @@
 #include "atbash.h"
-#include <stdio.h>
 
 static char _alpha_atbash[MAX_LENGTH] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 static unsigned char _length_atbash = LEN_ALPHA;
@@ -46,17 +45,4 @@ extern void atbash(char *to, const char *from)
 		*to++ = _char_atbash(*from++);
 
 	*to = END_OF_STRING;
-}
-
-main()
-{
-	char h[] = "Z";
-	char t[26];
-
-	set_alpha_atbash("abcdefg");
-	atbash(t, h);
-	printf("%s", t);
-
-	system("PAUSE");
-	return 0;
 }
