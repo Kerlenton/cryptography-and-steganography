@@ -1,5 +1,4 @@
 #include "scytale.h"
-#include <stdio.h>
 
 static char _default_char_ancient_sparta = 'Z';
 
