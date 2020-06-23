@@ -58,16 +58,3 @@ extern void p(char *from, size_t strings)
 		i++;
 	}
 }
-
-main()
-{
-	char s[50] = "hell";
-	char t[30];
-	char c[30];
-
-	ancient_sparta(t, s, 5, ENCRYPT_MODE);
-	printf("%s", t);
-
-	system("PAUSE");
-	return 0;
-}
