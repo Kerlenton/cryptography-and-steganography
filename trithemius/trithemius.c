@@ -1,27 +1,9 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include "trithemius.h"
+#include <string.h>
 
 static char _alpha_trithemius[MAX_LENGTH] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 static unsigned char _length_trithemius = LEN_ALPHA;
-
-static int gkey(int i)
-{
-	int key = 2 * i * i + 5 * i + 3;
-}
-
-static void strcpy(char *s, char *t)
-{
-	while (*s++ = *t++)
-		;
-}
-
-static size_t strlens(const char *str)
-{
-	size_t len = 0;
-	while (*str++)
-		len++;
-
-	return len;
-}
 
 static char _char_trithemius(char key, const char c, const char mode)
 {
@@ -34,9 +16,14 @@ static char _char_trithemius(char key, const char c, const char mode)
 	return c;
 }
 
+static int gkey(int i)
+{
+	int key = 2 * i * i + 5 * i + 3;
+}
+
 extern int set_alpha_trithemius(const char *alpha)
 {
-	const size_t length = strlens(alpha);
+	const size_t length = strlen(alpha);
 
 	if (length >= MAX_LENGTH)
 		return 1;
