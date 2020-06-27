@@ -1,22 +1,9 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include "atbash.h"
+#include <string.h>
 
 static char _alpha_atbash[MAX_LENGTH] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 static unsigned char _length_atbash = LEN_ALPHA;
-
-static void strcpy(char *s, char *t)
-{
-	while (*s++ = *t++)
-		;
-}
-
-static size_t strlen(const char *str)
-{
-	size_t len = 0;
-	while (*str++)
-		len++;
-
-	return len;
-}
 
 static char _char_atbash(const char c)
 {
