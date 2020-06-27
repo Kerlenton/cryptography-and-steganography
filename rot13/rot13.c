@@ -1,47 +1,31 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include "rot13.h"
+#include <string.h>
 
-#define NULL ((void*) 0)
-
-static char _alpha_rot13[MAX_LENGTH] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-static unsigned char _length_rot13 = LEN_ALPHA;
+static char _alpha_rot[MAX_LENGTH] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+static unsigned char _length_caesar = LEN_ALPHA;
 
 static char _char_rot13(const char ch)
 {
-	if (_alpha_rot13[0] <= ch && ch <= _alpha_rot13[_length_rot13 - 1])
-		return ch % _length_rot13 + _alpha_rot13[0];
+	if (_alpha_rot[0] <= ch && ch <= _alpha_rot[_length_caesar - 1])
+		return ch % _length_caesar + _alpha_rot[0];
 	return ch;
 }
 
-static void strcpy(char *s, char *t)
-{
-	while (*s++ = *t++)
-		;
-}
-
-static size_t strlen(const char *str)
-{
-	size_t len = 0;
-	while (*str++)
-		len++;
-
-	return len;
-}
-
-
-extern int set_alpha_rot13(const char *alpha)
+extern int set_alpha_caesar(const char *alpha)
 {
 	const size_t length = strlen(alpha);
 
 	if (length >= MAX_LENGTH)
 		return 1;
 
-	_length_rot13 = length;
-	strcpy(_alpha_rot13, alpha);
+	_length_caesar = length;
+	strcpy(_alpha_rot, alpha);
 
 	return 0;
 }
 
-/*extern void print_array(char *arr)
+extern void print_array(char *arr)
 {
 	printf("[ ");
 
@@ -49,7 +33,7 @@ extern int set_alpha_rot13(const char *alpha)
 		printf("%c", *i);
 
 	printf(" ]\n");
-}*/
+}
 
 extern void rot13(char *to, char *from)
 {
