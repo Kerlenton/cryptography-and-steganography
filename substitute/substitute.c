@@ -1,6 +1,5 @@
 #include "substitute.h"
 #include <string.h>
-#include <stdio.h>
 
 static char _alpha_substitute[MAX_LENGTH] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 static char _vector_substitute[MAX_LENGTH] = "~!@#$%^&*()_+=-0123456789`";
