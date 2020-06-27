@@ -1,5 +1,4 @@
 #include "a1z26.h"
-#include <stdio.h>
 
 extern char a1z26(char *to, const char *from, const char mode)
 {
