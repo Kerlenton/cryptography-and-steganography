@@ -11,6 +11,5 @@
 
 typedef unsigned int  size_t;
 
-
 extern int set_alpha_trithemius(const char *alpha);
 extern int trithemius(char *to, char *from, const int mode);
