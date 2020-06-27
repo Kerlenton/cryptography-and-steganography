@@ -1,4 +1,7 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include "caesar.h"
+#include <string.h>
+
 
 static char _alpha_caesar[MAX_LENGTH] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 static unsigned char _length_caesar = LEN_ALPHA;
@@ -11,20 +14,6 @@ static char _char_caesar(const char key, const char c)
 	return c;
 }
 
-static void strcpy(char *s, char *t)
-{
-	while (*s++ = *t++)
-		;
-}
-
-static size_t strlen(const char *str)
-{
-	size_t len = 0;
-	while (*str++)
-		len++;
-
-	return len;
-}
 
 extern int set_alpha_caesar(const char *alpha)
 {
@@ -63,3 +52,4 @@ extern void print_array(char *arr)
 
 	printf(" ]\n");
 }
+
