@@ -34,17 +34,6 @@ static _char_vigenere(const char ch, char key, const char mode)
 	return ch;
 }
 
-main()
-{
-	char s[30];
-	char t[] = "ATTACKATDAWN";
-	vigenere(s, t, "LEMON", ENCRYPT_MODE);
-	printf("%s", s);
-
-	system("PAUSE");
-	return 0;
-}
-
 extern char set_alpha_vigenere(const char *alpha)
 {
 	const unsigned int length = strlen(alpha);
