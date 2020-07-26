@@ -8,6 +8,5 @@ int main(void)
 
 	printf("%s", to);
 
-	system("PAUSE");
 	return 0;
 }
