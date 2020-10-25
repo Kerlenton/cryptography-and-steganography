@@ -8,8 +8,9 @@ float q = 0;
 
 void length_of_key(char *s, int t)
 {
-	int length = strlen(s);
 	int n = t;
+	int length = strlen(s);
+	
 	for (int i = 0; i < n; i++)
 	{
 
@@ -25,14 +26,16 @@ void length_of_key(char *s, int t)
 			float h = prob[j];
 			sum += (h / q) * (h / q);
 		}
+		
+		for (int k = 0; k < 26; k++)
+			prob[k] = 0;
 
 		printf("%f\n", sum);
 
 		q = 0;
 		sum = 0;
 		t = 0;
-		for (int k = 0; k < 26; k++)
-			prob[k] = 0;
+		
 	}
 }
 
